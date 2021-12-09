@@ -1,0 +1,14 @@
+<h1> Upload Excel Sheet </h1>
+
+<%= form_with url: excel_path do |form| %>
+
+    <div class="mb-3">
+        <%= form.file_field :attachment, direct_upload: true %>
+    </div>
+
+
+    <div class="mb-3">
+        <%= form.submit "Upload" , class: "btn btn-primary"%>
+    </div>
+
+<%end%>
