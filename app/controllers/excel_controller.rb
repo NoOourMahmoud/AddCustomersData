@@ -3,7 +3,7 @@ class ExcelController < ApplicationController
     end
 
     def uploadSheet
-        CustomerDataEntryJob.perform_later params
+        CustomerDataEntryJob.perform_later params[:attachment]
         redirect_to root_path
     end
 end

@@ -3,7 +3,7 @@ class CustomerDataEntryJob < ApplicationJob
 
   def perform(params)
     # Do something later
-    workbook = RubyXL::Parser.parse(ActiveStorage::Blob.service.path_for(ActiveStorage::Blob.find_by(id: 4).key))
+    workbook = RubyXL::Parser.parse(ActiveStorage::Blob.service.path_for(ActiveStorage::Blob.find_by(id: 1).key))
 
 		#Acquire WorkSheet
 		worksheet = workbook[0]
