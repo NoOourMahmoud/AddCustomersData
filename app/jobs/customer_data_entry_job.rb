@@ -29,6 +29,6 @@ class CustomerDataEntryJob < ApplicationJob
 		#print("\n")
 		#print(customarData, "\n")
 	}
-	ActiveStorage::Blob.find_by(id: temp_id).destroy
+	ActiveStorage::Blob.find_by(id: temp_id).purge
   end
 end
