@@ -9,7 +9,7 @@ class ExcelController < ApplicationController
         if @sheet.save
             @sheet.sheet.attach(params[:sheet])
             #CustomerDataEntryJob.perform_later @sheet
-            workbook = RubyXL::Parser.parse(Rails.application.routes.url_helpers.url_for(params[:id]))
+            workbook = RubyXL::Parser.parse(@sheet.sheet_path)
             #workbook = RubyXL::Parser.parse(attached[:file])
 
             #Acquire WorkSheet
