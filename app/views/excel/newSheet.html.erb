@@ -1,9 +1,10 @@
 <h1> Upload Excel Sheet </h1>
 
-<%= form_with, model:  url: excel_path do |form| %>
+<%= form_with model: @sheet, url: excel_path do |form| %>
 
-    <div class="mb-3">
-        <%= form.file_field :attachment, direct_upload: true %>
+    <%= render "shared/form_errors", form: form %>
+    <div class="mb-9">
+        <%= form.file_field :sheet %>
     </div>
 
 

@@ -3,8 +3,7 @@ class CustomerDataEntryJob < ApplicationJob
 
   def perform(attached)
     # Do something later
-	temp_id = 1
-    workbook = RubyXL::Parser.parse(ActiveStorage::Blob.service.path_for(ActiveStorage::Blob.find_by(id: temp_id).key))
+    workbook = RubyXL::Parser.parse(Rails.application.routes.url_helpers.url_for(attached))
 	#workbook = RubyXL::Parser.parse(attached[:file])
 
 	#Acquire WorkSheet
