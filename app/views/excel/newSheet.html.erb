@@ -2,14 +2,15 @@
 
 <%= form_with model: @sheet, url: excel_path do |form| %>
 
-    <%= render "shared/form_errors", form: form %>
-    <div class="mb-9">
-        <%= form.file_field :sheet %>
-    </div>
+  <%= render "shared/form_errors", form: form %>
+  
+  <div class="mb-9">
+    <%= form.file_field :sheet, accept: ".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" %>
+  </div>
 
 
-    <div class="mb-3">
-        <%= form.submit "Upload" , class: "btn btn-primary"%>
-    </div>
+  <div class="mb-3">
+    <%= form.submit "Upload" , class: "btn btn-primary"%>
+  </div>
 
 <%end%>
