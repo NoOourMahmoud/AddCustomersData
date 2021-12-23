@@ -7,7 +7,7 @@ class Api::V1::CustomersController < ApplicationController
 
   def show
     lastId = Customer.last.id.to_s
-    if lastId >= params[:id]
+    if lastId >= params[:id] && params[:id] > "0"
       @customer = Customer.find(params[:id])
     else
       @customer = Customer.last
