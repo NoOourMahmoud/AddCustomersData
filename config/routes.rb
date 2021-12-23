@@ -3,4 +3,10 @@ Rails.application.routes.draw do
 
   root to: "excel#newSheet"
   post "excel", to: "excel#uploadSheet"
+
+  namespace :api do
+    namespace :v1 do
+      resources :customers, only: [:index, :show]
+    end
+  end
 end
