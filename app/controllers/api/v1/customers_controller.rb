@@ -6,12 +6,7 @@ class Api::V1::CustomersController < ApplicationController
   end
 
   def show
-    lastId = Customer.last.id.to_s
-    if lastId >= params[:id] && params[:id] > "0"
-      @customer = Customer.find(params[:id])
-    else
-      @customer = Customer.last
-    end
+    @customer = Customer.find(params[:id])
     render json: @customer
   end
 end
