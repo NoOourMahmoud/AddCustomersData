@@ -1,0 +1,18 @@
+<% @customers.each do |customer| %>
+  <br>
+  <br>
+  <%= customer.name%>
+  <br>
+  <%= customer.mobile%>
+  <br>
+  <%= customer.address%>
+  <br>
+
+  <%= button_to "Edit", customers_edit_path(customer), method: :get, class: "btn btn-outline-danger" %>
+  <%= button_to "Delete", customers_path(customer), method: :delete, data: {confirm: "Are you sure"}, class: "btn btn-outline-danger" %>
+<% end %>
+
+
+<br>
+<br>
+<%= pagy_bulma_nav(@pagy).html_safe %>

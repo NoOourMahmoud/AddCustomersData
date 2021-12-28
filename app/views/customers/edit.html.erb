@@ -1,0 +1,32 @@
+<h1> Edit Customer </h1>
+
+<%= form_with model: @customer, url: customers_edit_path do |form| %>
+
+    <% if form.object.errors.any? %>
+        <div class="alert alert-danger">
+            <% form.object.errors.full_messages.each do |message| %>
+                <div> <%= message %> </div>
+            <%end%>
+        </div>
+    <%end%>
+
+    <div class="mb-3">
+        <%= form.label :mobile %>
+        <%= form.text_field :mobile, class: "form-control", placeholder: "+20 1478596266"%>
+    </div>
+
+    <div class="mb-3">
+        <%= form.label :name %>
+        <%= form.text_field :name, class: "form-control", placeholder: "Nour Mahmoud"%>
+    </div>
+
+    <div class="mb-3">
+        <%= form.label :address %>
+        <%= form.text_field :address, class: "form-control", placeholder: "7 st elHuda"%>
+    </div>
+
+    <div class="mb-3">
+        <%= form.submit "Update Customer" , class: "btn btn-primary"%>
+    </div>
+
+<%end%>
