@@ -1,11 +1,3 @@
-require 'pagy/extras/bootstrap'
-require 'pagy/extras/bulma'
-require 'pagy/extras/foundation'
-require 'pagy/extras/materialize'
-require 'pagy/extras/navs'
-require 'pagy/extras/semantic'
-require 'pagy/extras/uikit'
-
 class CustomersController < ApplicationController
   before_action :setCustomer, only: [:destroy, :edit]
 
