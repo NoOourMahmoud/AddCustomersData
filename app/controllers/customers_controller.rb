@@ -2,7 +2,7 @@ class CustomersController < ApplicationController
   before_action :setCustomer, only: [:destroy, :edit]
 
   def index
-    @pagy, @customers = pagy(Customer.all, items: 7)
+    @pagy, @customers = pagy(Customer.order(name: :ASC), items: 7)
   end
 
   def destroy

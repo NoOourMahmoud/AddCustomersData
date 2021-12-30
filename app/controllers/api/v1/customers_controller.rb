@@ -1,7 +1,7 @@
 class Api::V1::CustomersController < ApplicationController
 
   def index
-    @customers = Customer.order(name: :DESC)
+    @customers = Customer.order(name: :ASC)
     render json: @customers
   end
 
