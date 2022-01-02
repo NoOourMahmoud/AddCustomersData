@@ -2,17 +2,11 @@ require "rails_helper"
 
 feature "View Customers" do
 	scenario "successfully" do
-		#insert_new_customer
-    Customer.destroy_all
-    Customer.create!(mobile: "123", name: "Temp Customer", address: "Temp Address")
     
+		insert_new_customer "Temp Mobile Number", "Temp Customer Name", "Temp Customer Address"
     visit customers_path
     
-
-		expect(page).to have_css "h5", text: "Temp Customer"
-    expect(page).to have_css "p", text: "123"
-    expect(page).to have_css "p", text: "Temp Address"
-
+    expect_to_display_customer "Temp Mobile Number", "Temp Customer Name", "Temp Customer Address"
 	end
   
 end
