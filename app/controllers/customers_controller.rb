@@ -2,9 +2,17 @@ require 'pagy/extras/bootstrap'
 
 class CustomersController < ApplicationController
   before_action :setCustomer, only: [:destroy, :edit]
+  @itemsNum = 0
 
   def index
-    @pagy, @customers = pagy(Customer.order(name: :ASC), items: 7)
+    if @itemsNum == 0
+      @itemsNum = 5      
+    end
+    @pagy, @customers = pagy(Customer.order(name: :ASC), items: @itemsNum)
+  end
+
+  def show
+    #@items = params[]
   end
 
   def destroy

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   #for pagination with editing ability
   get "customers", to: "customers#index"
+  patch "customers", to: "customer#show"
   get "customers/edit", to: "customers#edit"
   patch "customers/edit", to: "customers#update"
   delete "customers", to: "customers#destroy"
