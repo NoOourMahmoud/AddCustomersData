@@ -1,3 +1,5 @@
+require 'pagy/extras/bootstrap'
+
 class CustomersController < ApplicationController
   before_action :setCustomer, only: [:destroy, :edit]
 
