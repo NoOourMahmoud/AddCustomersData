@@ -7,9 +7,7 @@ feature "Edit Customer" do
     visit customers_path
     
     click_on "Edit"
-    fill_in "Mobile", with: "New Mobile"
-    fill_in "Name", with: "New Name"
-    fill_in "Address", with: "New Address"
+    insert_edited_customer_data "New Mobile", "New Name", "New Address"
 		click_on "Update Customer"
 
     expect_to_display_customer "New Mobile", "New Name", "New Address"
