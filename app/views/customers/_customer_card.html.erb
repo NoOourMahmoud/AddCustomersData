@@ -1,0 +1,18 @@
+<div class="card myCard">
+    <div class="card-body">
+      <h5 class="card-title"><%= customer.name%></h5>
+      <p class="card-text">Mobile: <%= customer.mobile%> </p>
+      <p class="card-text">Address: <%= customer.address%></p>
+
+      <div class="dropdown">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="blue" class="bi bi-sliders dropdown-toggle" viewBox="0 0 16 16" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          <path fill-rule="evenodd" d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3h9.05zM4.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM2.05 8a2.5 2.5 0 0 1 4.9 0H16v1H6.95a2.5 2.5 0 0 1-4.9 0H0V8h2.05zm9.45 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-2.45 1a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0v-1h9.05z"/>
+        </svg>
+
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <li><%= button_to "Edit", customers_edit_path(customer), method: :get, class: "dropdown-item"%></li>
+          <li><%= button_to "Delete", customers_path(customer), method: :delete, data: {confirm: "Are you sure"}, class: "dropdown-item"%></li>
+        </ul>
+      </div>
+    </div>
+  </div>

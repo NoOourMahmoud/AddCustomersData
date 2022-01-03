@@ -1,50 +1,10 @@
 <h1> Customers </h1>
 
 <% @customers.each do |customer| %>
-
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title"><%= customer.name%></h5>
-      <p class="card-text">Mobile: <%= customer.mobile%> </p>
-      <p class="card-text">Address: <%= customer.address%></p>
-
-      <div class="dropdown">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="blue" class="bi bi-sliders dropdown-toggle" viewBox="0 0 16 16" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-          <path fill-rule="evenodd" d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3h9.05zM4.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM2.05 8a2.5 2.5 0 0 1 4.9 0H16v1H6.95a2.5 2.5 0 0 1-4.9 0H0V8h2.05zm9.45 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-2.45 1a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0v-1h9.05z"/>
-        </svg>
-
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <li><%= button_to "Edit", customers_edit_path(customer), method: :get, class: "dropdown-item"%></li>
-          <li><%= button_to "Delete", customers_path(customer), method: :delete, data: {confirm: "Are you sure"}, class: "dropdown-item"%></li>
-        </ul>
-      </div>
-    </div>
-  </div>
+  <%=render "customer_card", customer: customer%>
 <% end %>
 
-<div class="container">
-  <div class="row">
-    <div class="col mt-4">
-      <div class="dropdown">  
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Page Size
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" style = "height: 200px; overflow: auto;">
-          <li><%= button_to "1", customers_path("1"), method: :patch, class: "dropdown-item"%></li>
-          <li><%= button_to "2", customers_path("2"), method: :patch, class: "dropdown-item"%></li>
-          <li><%= button_to "3", customers_path("3"), method: :patch, class: "dropdown-item"%></li>
-          <li><%= button_to "4", customers_path("4"), method: :patch, class: "dropdown-item"%></li>
-          <li><%= button_to "5", customers_path("5"), method: :patch, class: "dropdown-item"%></li>
-          <li><%= button_to "6", customers_path("6"), method: :patch, class: "dropdown-item"%></li>
-          <li><%= button_to "7", customers_path("7"), method: :patch, class: "dropdown-item"%></li>
-          <li><%= button_to "8", customers_path("8"), method: :patch, class: "dropdown-item"%></li>
-          <li><%= button_to "9", customers_path("9"), method: :patch, class: "dropdown-item"%></li>
-          <li><%= button_to "10", customers_path("10"), method: :patch, class: "dropdown-item"%></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
+<%=render "page_size_dropdown_menu"%>
 
 <div class = "mt-4">
   <%= pagy_bootstrap_nav(@pagy).html_safe %>

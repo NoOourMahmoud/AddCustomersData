@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+ .myDropDown
+ {
+    height: 200px;
+    overflow: auto;
+ }
+
+ .myCard
+ {
+  width: 18rem;
+ }
