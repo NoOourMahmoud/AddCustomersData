@@ -17,11 +17,10 @@ class CustomersController < ApplicationController
   end
 
   def edit
-    $prevId = @customer[:id]
   end
 
   def update
-    @customer = Customer.find($prevId)
+    @customer = Customer.find(params[:id])
     if @customer.update(params_customer)
       redirect_to customers_path, notice: "customer updated"
     else
@@ -31,7 +30,6 @@ class CustomersController < ApplicationController
   
 
   private
-  #there isn't ID in params
   def setCustomer
     @customer = Customer.find(params[:id])
   end
