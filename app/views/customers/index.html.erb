@@ -1,4 +1,4 @@
-<h1> Customers </h1>
+<h1> <%=t("customers_header")%> </h1>
 
 <% @customers.each do |customer| %>
   <%=render "customer_card", customer: customer%>

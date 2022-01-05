@@ -1,8 +1,8 @@
 <div class="card myCard">
     <div class="card-body">
       <h5 class="card-title"><%= customer.name%></h5>
-      <p class="card-text">Mobile: <%= customer.mobile%> </p>
-      <p class="card-text">Address: <%= customer.address%></p>
+      <p class="card-text"><%=t("mobile_label")%><%= customer.mobile%> </p>
+      <p class="card-text"> <%=t("address_label")%><%= customer.address%></p>
 
       <div class="dropdown">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="blue" class="bi bi-sliders dropdown-toggle" viewBox="0 0 16 16" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
