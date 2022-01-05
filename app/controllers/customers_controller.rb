@@ -1,16 +1,14 @@
 require 'pagy/extras/bootstrap'
 
 class CustomersController < ApplicationController
-  before_action :setCustomer, only: [:destroy, :edit]
-  $itemsNum = 5
+  before_action :setCustomer, only: [:destroy, :edit, :show]
 
   def index
-    @pagy, @customers = pagy(Customer.order(name: :ASC), items: $itemsNum)
+    @page_size = params[:page_size] || 5
+    @pagy, @customers = pagy(Customer.order(name: :ASC), items: params[:page_size] || 5)
   end
 
   def show
-    $itemsNum = params[:format]
-    redirect_to customers_path
   end
 
   def destroy
@@ -35,7 +33,7 @@ class CustomersController < ApplicationController
   private
   #there isn't ID in params
   def setCustomer
-    @customer = Customer.find(params[:format])
+    @customer = Customer.find(params[:id])
   end
 
   def params_customer

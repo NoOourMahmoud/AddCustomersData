@@ -10,8 +10,8 @@
         </svg>
 
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <li><%= button_to "Edit", customers_edit_path(customer), method: :get, class: "dropdown-item"%></li>
-          <li><%= button_to "Delete", customers_path(customer), method: :delete, data: {confirm: "Are you sure"}, class: "dropdown-item"%></li>
+          <li><%= button_to "Edit", edit_customer_path(customer), method: :get, class: "dropdown-item"%></li>
+          <li><%= button_to "Delete", customer_path(customer), method: :delete, data: {confirm: "Are you sure"}, class: "dropdown-item"%></li>
         </ul>
       </div>
     </div>
