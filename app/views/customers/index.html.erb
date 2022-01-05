@@ -6,10 +6,6 @@
 
 <%=render "page_size_dropdown_menu", current_size: @page_size%>
 
-
-
-<%= t('hello') %>
-
 <div class = "mt-4">
   <%= pagy_bootstrap_nav(@pagy).html_safe %>
 </div>
